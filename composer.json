@@ -12,7 +12,11 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.4"
+        "laravel/ui": "^3.4",
+        "sc0vu/web3.php": "dev-master",
+        "web3p/ethereum-tx": "^0.4.3",
+        "simplito/elliptic-php": "^1.0",
+        "kornrunner/keccak": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
