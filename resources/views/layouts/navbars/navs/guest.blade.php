@@ -20,7 +20,7 @@
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="{{ route('home') }}">
                         <i class="ni ni-planet"></i>
-                        <span class="nav-link-inner--text">Dashboard</span>
+                        <span class="nav-link-inner--text">Inicio</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -35,12 +35,12 @@
                         <span class="nav-link-inner--text">Ingresar</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="{{ route('profile.edit') }}">
-                        <i class="ni ni-single-02"></i>
-                        <span class="nav-link-inner--text">Ver perfil</span>
-                    </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link nav-link-icon" href="{{ route('profile.edit') }}">--}}
+{{--                        <i class="ni ni-single-02"></i>--}}
+{{--                        <span class="nav-link-inner--text">Ver perfil</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
             </ul>
         </div>
     </div>
