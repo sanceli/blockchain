@@ -53,6 +53,7 @@ class SignXmlController extends Controller
 
         $xmlfile->issign = '1';
         $xmlfile->sign = $signature;
+        $xmlfile->pathsigned = $signedXMLfile ;
         $xmlfile->save();
 
         echo "Archivo XML firmado correctamente.";

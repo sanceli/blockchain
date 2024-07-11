@@ -103,7 +103,7 @@ class ValidateXmlController extends Controller
     public function verifyIntegrity(Request $request, $id)
     {
         $xmlfile = Xmlfiles::findOrFail($id);
-        $xmlHash = hash('sha256', file_get_contents( public_path() . $xmlfile->pathsigned));
+        $xmlHash = hash('sha256', file_get_contents(  $xmlfile->pathsigned));
 
         // Obtener la transacción desde la blockchain
         $this->web3->eth->getTransactionByHash($xmlfile->hash, function ($err, $transaction) use ($xmlHash, &$onChainHash) {
