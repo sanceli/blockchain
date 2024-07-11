@@ -27,6 +27,14 @@ Route::get('/formulario', 'App\Http\Controllers\FormController@index')->name('fo
 Route::get('/generarxml', 'App\Http\Controllers\XmlController@index')->name('generarxml');
 Route::get('/listxml', 'App\Http\Controllers\ListXmlController@index')->name('listxml');
 Route::get('/validarxml', 'App\Http\Controllers\ValidateXmlController@index')->name('validarxml');
+Route::get('/uploadxml', 'App\Http\Controllers\UploadXmlController@index')->name('uploadxml');
+Route::post('/uploadxml', 'App\Http\Controllers\UploadXmlController@uploadfile')->name('uploadxml');
+Route::post('/sendblockchain/{id}', 'App\Http\Controllers\SignXmlController@sendblockchain')->name('sendblockchain');
+Route::post('/digitalsign/{id}', 'App\Http\Controllers\SignXmlController@digitalsign')->name('digitalsign');
+Route::post('/publish-hash/{id}','App\Http\Controllers\BlockchainController@publishHash')->name('publish-hash');
+Route::post('/validate/{id}', 'App\Http\Controllers\ValidateXmlController@verifyIntegrity')->name('validate');
+
+
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);

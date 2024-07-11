@@ -79,6 +79,13 @@
                         <i class="ni ni-pin-3 text-orange"></i> Generar Bitacora XML
                     </a>
                 </li>
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{ route('uploadxml') }}">
+                        <i class="ni ni-pin-3 text-orange"></i> Cargar Archivo XML
+                    </a>
+                </li>
+
                 <li class="nav-item ">
                     <a class="nav-link" href="{{ route('listxml') }}">
                         <i class="ni ni-pin-3 text-orange"></i> Lista Bitacora XML Generadas y Firmadas

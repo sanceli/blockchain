@@ -471,3 +471,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/laravel,angular,phpstorm,macos,windows,linux,vuejs,node,less,sass,intellij+all,visualstudiocode
+
+# especifico SANCELI
+public/xml_files

@@ -51,7 +51,7 @@
                                 </label>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary my-4">{{ __('Registrarse') }}</button>
+                                <button type="submit" class="btn btn-primary my-4"> Ingresar</button>
                             </div>
                         </form>
                     </div>

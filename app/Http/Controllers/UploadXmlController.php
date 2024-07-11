@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Xmlfiles;
 use Illuminate\Http\Request;
 
-class ListXmlController extends Controller
+class UploadXmlController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -17,6 +17,7 @@ class ListXmlController extends Controller
         $this->middleware('auth');
     }
 
+
     /**
      * Display a listing of the resource.
      *
@@ -24,9 +25,7 @@ class ListXmlController extends Controller
      */
     public function index()
     {
-        $xml = Xmlfiles::paginate(10);
-
-        return view('listxml', compact('xml'));
+        return view('uploadxml');
     }
 
     /**
@@ -93,5 +92,44 @@ class ListXmlController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function uploadfile(Request $request)
+    {
+         $validateresult =$request->validate([
+            'xml_file' => 'required|file|mimes:xml',
+        ]);
+
+        if($request->hasFile('xml_file')){
+            $file = $request->file('xml_file');
+
+            $destinationPath = public_path() . '/xml_files';
+            $name =  $file->getClientOriginalName();
+
+            if(!$file->move($destinationPath, $name)) {
+                return response()->json(['success' => false]);
+            } else {
+                $xml = new Xmlfiles();
+                $xml->path = $destinationPath.'/'.$name;
+                $xml->filename = $name;
+                $xml->issign = '0';
+                $xml->ishash = '0';
+                $xml->save();
+
+                $mensaje = 'El archivo se subio correctamente en la ubicacion ' . $destinationPath . '/' . $name;
+                return redirect()->route('uploadxml')->with('success', $mensaje);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
     }
 }
