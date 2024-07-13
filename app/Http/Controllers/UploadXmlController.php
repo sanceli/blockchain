@@ -107,7 +107,7 @@ class UploadXmlController extends Controller
             $name =  $file->getClientOriginalName();
 
             if(!$file->move($destinationPath, $name)) {
-                return response()->json(['success' => false]);
+                return redirect()->back()->with('status', 'El archivo XML no se ha cargado correctamente.');
             } else {
                 $xml = new Xmlfiles();
                 $xml->path = $destinationPath.'/'.$name;
@@ -116,8 +116,8 @@ class UploadXmlController extends Controller
                 $xml->ishash = '0';
                 $xml->save();
 
-                $mensaje = 'El archivo se subio correctamente en la ubicacion ' . $destinationPath . '/' . $name;
-                return redirect()->route('uploadxml')->with('success', $mensaje);
+                $mensaje = 'El archivo '. $name . 'se subio correctamente en la ubicacion ' ;
+                return redirect()->back()->with('status', $mensaje);
             }
         }
 

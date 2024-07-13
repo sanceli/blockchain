@@ -85,9 +85,10 @@ class BlockchainController extends Controller
             $xmlfile->signedhash = '/xml_files/signedhash_' . $xmlfile->filename;
             $xmlfile->save();
 
-            return response()->json(['txHash' => $txHash], 200);
+            return redirect()->back()->with('status', 'Archivo XML firmado, enviado al Blockchain correctamente.');
         } catch (Exception $e) {
-            return response()->json(['error' => 'Error publicando el hash en la blockchain: ' . $e->getMessage()], 500);
+            return redirect()->back()->with('status',  'Error publicando el hash en la blockchain: ' . $e->getMessage(), 500);
+
         }
     }
 

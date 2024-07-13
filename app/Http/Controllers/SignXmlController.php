@@ -56,7 +56,8 @@ class SignXmlController extends Controller
         $xmlfile->pathsigned = $signedXMLfile ;
         $xmlfile->save();
 
-        echo "Archivo XML firmado correctamente.";
+        return redirect()->back()->with('status', 'Archivo XML firmado correctamente.');
+
     }
 
     public function sendblockchain(Request $request, $id){
@@ -78,6 +79,8 @@ class SignXmlController extends Controller
         $xmlfile->ishash = '1';
         $xmlfile->hash = $txHash;
         $xmlfile->save();
+
+        return redirect()->back()->with('status', 'Archivo XML firmado, enviado al Blockchain correctamente.');
     }
 
     public function publishHash($xmlHash)
