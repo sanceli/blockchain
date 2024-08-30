@@ -9,4 +9,5 @@ class Xmlfiles extends Model
     protected $table = 'xmlfiles';
     protected $primaryKey = 'id';
     public $timestamps = false;
+
 }

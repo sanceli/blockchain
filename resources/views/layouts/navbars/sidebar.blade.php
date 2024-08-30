@@ -69,11 +69,11 @@
                     </a>
                 </li>
 
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="{{ route('formulario') }}">--}}
-{{--                        <i class="ni ni-planet text-blue"></i> Ingresar Datos--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('data_entry.create') }}">
+                        <i class="ni ni-planet text-blue"></i> Ingresar Datos
+                    </a>
+                </li>
 {{--                <li class="nav-item ">--}}
 {{--                    <a class="nav-link" href="{{ route('generarxml') }}">--}}
 {{--                        <i class="ni ni-pin-3 text-orange"></i> Generar Bitacora XML--}}

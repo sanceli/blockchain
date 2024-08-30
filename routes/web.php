@@ -33,6 +33,8 @@ Route::post('/sendblockchain/{id}', 'App\Http\Controllers\SignXmlController@send
 Route::post('/digitalsign/{id}', 'App\Http\Controllers\SignXmlController@digitalsign')->name('digitalsign');
 Route::post('/publish-hash/{id}','App\Http\Controllers\BlockchainController@publishHash')->name('publish-hash');
 Route::post('/validate/{id}', 'App\Http\Controllers\ValidateXmlController@verifyIntegrity')->name('validate');
+Route::get('data-entry/create', 'App\Http\Controllers\DataEntryController@create')->name('data_entry.create');
+Route::post('data-entry/store', 'App\Http\Controllers\DataEntryController@store')->name('data_entry.store');
 
 
 
