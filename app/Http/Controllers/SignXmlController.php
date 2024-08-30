@@ -41,7 +41,7 @@ class SignXmlController extends Controller
         $userdata = Keys::where('users_id', $userid)->first();
         $xmlfile = Xmlfiles::where('id', $id)->first();
 
-        $privateKey = file_get_contents(public_path() . '/keys/' . $userid . '/' . $userdata->privatekey );
+        $privateKey = file_get_contents(public_path() . '/keys/' . '1' . '/' . $userdata->privatekey );
         $xmlContent = file_get_contents($xmlfile->path);
         $signature = $this->signXML($xmlContent, $privateKey);
 
@@ -64,8 +64,8 @@ class SignXmlController extends Controller
 
         $userid =  auth()->user()->id;
 
-        $userwallet = Wallet::where('users_id', $userid)->first();
-        $xmlfile = Xmlfiles::where('id', $id)->first();
+        $userwallet = Wallet::where('users_id', '1')->first();
+        $xmlfile = Xmlfiles::where('id', '1')->first();
 
         $this->account = $userwallet->account;
         $this->privateKey = $userwallet->privatekey;
